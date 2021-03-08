@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Marvel</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="charactersList_fragment_label">Marvel Characters</string>
+    <string name="txt_dummy">Some Text</string>
+
+    <string name="lbl_error_msg">Error..</string>
+    <string name="lbl_internet_title">Network Error</string>
+    <string name="lbl_no_data">No quick filter found. Please try again later</string>
+    <string name="lbl_ok">OK</string>
+    <string name="lbl_msg_no_internet_connection">  "No internet connection found. Please connect to internet and try again."</string>
+</resources>
