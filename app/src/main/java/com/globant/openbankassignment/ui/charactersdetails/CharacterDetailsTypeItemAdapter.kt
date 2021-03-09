@@ -32,7 +32,6 @@ class CharacterDetailsTypeItemAdapter(
         RecyclerView.ViewHolder(
             itemRowBinding.root
         ) {
-
         fun bind(item: ItemModel) {
             itemRowBinding.setVariable(BR.detailListItem,item)
         }

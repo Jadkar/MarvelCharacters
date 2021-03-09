@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -56,7 +56,6 @@ dependencies {
     kapt rootProject.ext.daggerCompiler
     kapt rootProject.ext.daggerAndroidCompiler
 
-
     implementation rootProject.ext.javaxInject
 
     // retrofit
@@ -67,7 +66,6 @@ dependencies {
     implementation rootProject.ext.okhttpLogging
 
     // Reactive Streams (convert Observable to LiveData)
-
     implementation rootProject.ext.reactivestreams
 
 
@@ -82,7 +80,5 @@ dependencies {
     testImplementation rootProject.ext.mockitoKotlin
 
     testImplementation rootProject.ext.hamcrest
-
-
     implementation rootProject.ext.rxAndroid
 }

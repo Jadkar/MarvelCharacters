@@ -7,7 +7,7 @@ import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.openbank.domain.model.CharacterDetailsModel
-import com.openbank.domain.model.CharactersDeatilsType
+import com.openbank.domain.model.CharactersDetailsType
 import com.openbank.domain.model.DetailCharacterConverter
 import com.globant.openbankassignment.databinding.RowItemCharacterDetailstypeBinding
 import com.openbank.domain.model.ItemModel
@@ -22,7 +22,6 @@ class CharacterDetailTypeAdapter(
             LayoutInflater.from(parent.context),
             parent, false
         )
-
         return CharactersDetailsTypeHolder(binding)
     }
 
@@ -49,28 +48,27 @@ class CharacterDetailTypeAdapter(
             var listItem: List<ItemModel> = emptyList()
             when (characterDetailsModel.title) {
 
-                CharactersDeatilsType.COMICS.value -> {
+                CharactersDetailsType.COMICS.value -> {
                     // handleComicsView()
                     listItem =
                         DetailCharacterConverter.convertComicsItem(characterDetailsModel.comics!!)
                 }
-                CharactersDeatilsType.SERIES.value -> {
+                CharactersDetailsType.SERIES.value -> {
                     listItem =
                         DetailCharacterConverter.convertSeriesItem(characterDetailsModel.series!!)
                 }
-                CharactersDeatilsType.STORIES.value -> {
+                CharactersDetailsType.STORIES.value -> {
                     listItem =
                         DetailCharacterConverter.convertStoriesItem(characterDetailsModel.stories!!)
                 }
-                CharactersDeatilsType.EVENTS.value -> {
+                CharactersDetailsType.EVENTS.value -> {
                     listItem =
                         DetailCharacterConverter.convertEventsItem(characterDetailsModel.events!!)
                 }
-                CharactersDeatilsType.CHARACTERSDETAILSSOURCE.value -> {
+                CharactersDetailsType.CHARACTERSDETAILSSOURCE.value -> {
                     listItem =
                         DetailCharacterConverter.convertUrlsItem(characterDetailsModel.urls!!)
                 }
-
             }
 
             val itemListDataAdapter =

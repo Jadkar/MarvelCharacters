@@ -2,8 +2,6 @@ package com.openbank.data.module
 
 import androidx.annotation.NonNull
 import com.openbank.data.remote.MarvelApi
-
-
 import com.google.gson.GsonBuilder
 import com.openbank.data.BuildConfig
 import com.openbank.data.utils.DateHelper
@@ -11,7 +9,6 @@ import com.openbank.data.utils.HasKeyGenerator
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -31,12 +28,10 @@ class NetworkApiModule {
         builder.addInterceptor { chain ->
             val original = chain.request()
             val originalHttpUrl = original.url
-
-
             val currentTimeStamp = DateHelper.getCurrentTimestamp()
-            val haskKey =
+            val hashKey =
                 currentTimeStamp + BuildConfig.MARVEL_API__PRIVATE_KEY + BuildConfig.MARVEL_API_PUBLIC_KEY
-            val calculatedHaskKey = HasKeyGenerator.calculateHash(haskKey)
+            val calculatedHaskKey = HasKeyGenerator.calculateHash(hashKey)
             val url = originalHttpUrl.newBuilder()
                 .addQueryParameter("ts", currentTimeStamp)
                 .addQueryParameter("apikey", BuildConfig.MARVEL_API_PUBLIC_KEY)
@@ -44,11 +39,8 @@ class NetworkApiModule {
                 .build()
 
             val requestBuilder = original.newBuilder().url(url)
-
             chain.proceed(requestBuilder.build())
         }
-
-
         return builder.build()
     }
 

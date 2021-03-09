@@ -66,7 +66,6 @@ internal class GetCharacterDetailsRepositoryImplTest {
             comicsItem,
             12
         )
-
         // Series
         val seriesItem: List<ItemModel> = listOf(
             ItemModel(
@@ -81,8 +80,6 @@ internal class GetCharacterDetailsRepositoryImplTest {
             seriesItem,
             3
         )
-
-
         // Series
         val storiesItem: List<StoriesItemModel> = listOf(
             StoriesItemModel(

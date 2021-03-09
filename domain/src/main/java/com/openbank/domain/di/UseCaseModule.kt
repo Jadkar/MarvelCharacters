@@ -1,8 +1,6 @@
 package com.openbank.domain.di
 
-
 import com.openbank.domain.repository.GetCharactersDetailsRepository
-
 import com.openbank.domain.repository.GetCharactersRepository
 import com.openbank.domain.usecase.MarvelCharacterDetailsUseCaseImpl
 import com.openbank.domain.usecase.MarvelCharactersDetailsUseCase

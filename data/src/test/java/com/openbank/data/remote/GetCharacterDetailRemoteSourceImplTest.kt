@@ -40,7 +40,6 @@ internal class GetCharacterDetailRemoteSourceImplTest {
         MockitoAnnotations.openMocks(this)
         getCharacterDetailsRemoteSource =
             GetCharacterDetailRemoteSourceImpl(marvelApi, charactersDetailsMapper)
-
     }
 
     @Test
@@ -90,7 +89,6 @@ internal class GetCharacterDetailRemoteSourceImplTest {
             comicsItem,
             3L
         )
-
         // Series
         val seriesItem: List<ItemModel> = listOf(
             ItemModel(
@@ -105,8 +103,6 @@ internal class GetCharacterDetailRemoteSourceImplTest {
             seriesItem,
             2
         )
-
-
         // Series
         val storiesItem: List<StoriesItemModel> = listOf(
             StoriesItemModel(
@@ -126,14 +122,11 @@ internal class GetCharacterDetailRemoteSourceImplTest {
             storiesItem,
             7
         )
-
-        val mockedList: List<CharacterDetailsModel> = listOf(
+        return listOf(
             CharacterDetailsModel("Comics", comicsModel),
             CharacterDetailsModel("Series", null, seriesModel),
             CharacterDetailsModel("Stories", null, null, storiesModel)
         )
-
-        return mockedList
     }
 
 }

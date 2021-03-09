@@ -46,13 +46,11 @@ class CharactersListFragment : BaseFragment() {
             inflater, R.layout.fragment_characters,
             container, false
         )
-
         return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initRecyclerView()
         getCharactersList()
     }

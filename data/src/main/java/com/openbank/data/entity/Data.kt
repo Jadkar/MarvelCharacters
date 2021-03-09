@@ -7,5 +7,4 @@ data class Data (
     var total: Long = 0,
     var count: Long = 0,
     var results: List<Result>? = null
-
 )

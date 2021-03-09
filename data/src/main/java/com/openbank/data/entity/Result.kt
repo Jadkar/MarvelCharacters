@@ -2,7 +2,6 @@ package com.openbank.data.entity
 
 
 data class Result (
-
     var id: Long = 0,
     var name: String? = null,
     var description: String? = null,

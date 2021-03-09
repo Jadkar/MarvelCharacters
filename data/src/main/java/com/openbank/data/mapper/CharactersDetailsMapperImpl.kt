@@ -15,7 +15,7 @@ class CharactersDetailsMapperImpl :
         // Comics
         marvelCharactersResponse.data?.results?.get(0)?.comics?.items?.let {
             if (marvelCharactersResponse.data?.results?.get(0)?.comics?.items?.size ?: 0 > 0) {
-                val characterComicsTitle: String? = CharactersDeatilsType.COMICS.value
+                val characterComicsTitle: String? = CharactersDetailsType.COMICS.value
 
                 val jsonInString: String =
                     Gson().toJson(marvelCharactersResponse.data?.results?.get(0)?.comics)
@@ -31,7 +31,7 @@ class CharactersDetailsMapperImpl :
         //Series
         marvelCharactersResponse.data?.results?.get(0)?.series?.items.let {
             if (marvelCharactersResponse.data?.results?.get(0)?.series?.items?.size ?: 0 > 0) {
-                val characterSeriesTitle: String? = CharactersDeatilsType.SERIES.value
+                val characterSeriesTitle: String? = CharactersDetailsType.SERIES.value
 
                 val jsonInItemSeries: String =
                     Gson().toJson(marvelCharactersResponse.data?.results?.get(0)?.series)
@@ -47,12 +47,10 @@ class CharactersDetailsMapperImpl :
                 characterDetailsMapper.add(characterDetailsSeries)
             }
         }
-
-
         //Stories
         marvelCharactersResponse.data?.results?.get(0)?.stories?.storiesItems.let {
             if (marvelCharactersResponse.data?.results?.get(0)?.stories?.storiesItems?.size ?: 0 > 0) {
-                val characterStoriesTitle: String? = CharactersDeatilsType.STORIES.value
+                val characterStoriesTitle: String? = CharactersDetailsType.STORIES.value
 
                 val jsonInItemStories: String =
                     Gson().toJson(marvelCharactersResponse.data?.results?.get(0)?.stories)
@@ -68,11 +66,10 @@ class CharactersDetailsMapperImpl :
                 characterDetailsMapper.add(characterDetailsStories)
             }
         }
-
         //Events
         marvelCharactersResponse.data?.results?.get(0)?.stories?.storiesItems.let {
             if (marvelCharactersResponse.data?.results?.get(0)?.stories?.storiesItems?.size ?: 0 > 0) {
-                val characterEventsTitle: String? = CharactersDeatilsType.EVENTS.value
+                val characterEventsTitle: String? = CharactersDetailsType.EVENTS.value
 
                 val jsonInItemEvents: String =
                     Gson().toJson(marvelCharactersResponse.data?.results?.get(0)?.events)
@@ -88,12 +85,11 @@ class CharactersDetailsMapperImpl :
                 characterDetailsMapper.add(characterDetailsEvents)
             }
         }
-
         //Details Link URLS
         marvelCharactersResponse.data?.results?.get(0)?.urls?.let {
             if (marvelCharactersResponse.data?.results?.get(0)?.urls?.size ?: 0 > 0) {
                 val characterUrlsTitle: String? =
-                    CharactersDeatilsType.CHARACTERSDETAILSSOURCE.value
+                    CharactersDetailsType.CHARACTERSDETAILSSOURCE.value
 
                 val jsonInitemUrl =
                     Gson().toJsonTree(marvelCharactersResponse.data?.results?.get(0)?.urls!!)
@@ -110,8 +106,6 @@ class CharactersDetailsMapperImpl :
                 characterDetailsMapper.add(characterDetailsUrls)
             }
         }
-
-
         return characterDetailsMapper
     }
 }

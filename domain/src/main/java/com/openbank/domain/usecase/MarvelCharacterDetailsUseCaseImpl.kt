@@ -9,7 +9,6 @@ import javax.inject.Inject
 class MarvelCharacterDetailsUseCaseImpl @Inject constructor(
     val repository: GetCharactersDetailsRepository
 ) : MarvelCharactersDetailsUseCase {
-
     override fun getCharactersDetailsList(characterId: Long): Observable<List<CharacterDetailsModel>> {
         return repository.getCharactersDetailsById(characterId)
     }

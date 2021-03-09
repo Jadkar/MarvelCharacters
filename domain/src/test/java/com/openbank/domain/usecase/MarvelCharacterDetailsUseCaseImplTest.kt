@@ -84,8 +84,6 @@ internal class MarvelCharacterDetailsUseCaseImplTest {
             seriesItem,
             3
         )
-
-
         // Series
         val storiesItem: List<StoriesItemModel> = listOf(
             StoriesItemModel(
@@ -105,13 +103,10 @@ internal class MarvelCharacterDetailsUseCaseImplTest {
             storiesItem,
             21
         )
-
-        val mockedList: List<CharacterDetailsModel> = listOf(
+        return listOf(
             CharacterDetailsModel("Comics", comicsModel),
             CharacterDetailsModel("Series", null, seriesModel),
             CharacterDetailsModel("Stories", null, null, storiesModel)
         )
-
-        return mockedList
     }
 }

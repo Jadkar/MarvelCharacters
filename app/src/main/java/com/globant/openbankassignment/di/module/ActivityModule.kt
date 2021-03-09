@@ -6,7 +6,6 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class ActivityModule {
-
     @ContributesAndroidInjector
     abstract fun contributesCharactersListActivity():CharactersListActivity
 }

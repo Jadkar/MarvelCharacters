@@ -12,7 +12,6 @@ object DetailCharacterConverter {
             listItem.resourceURI = item.resourceURI
             convertedItemList.add(listItem)
         }
-
         return convertedItemList
     }
 

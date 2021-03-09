@@ -24,12 +24,10 @@ internal class CharactersDetailsMapperImplTest {
             CharacterListMockData.getCharacterDetails(),
             MarvelCharactersResponse::class.java
         )
-
         val result =
             characterListDetailsMapperImpl.getCharactersDetailUiModel(marvelCharactersResponse)
 
         MatcherAssert.assertThat(result.size, Matchers.`is`(4))
         MatcherAssert.assertThat(result[0].title, Matchers.`is`("Comics"))
-
     }
 }

@@ -12,7 +12,6 @@ import org.hamcrest.Matchers
 import org.junit.Rule
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
@@ -64,6 +63,5 @@ class GetCharacterListRemoteSourceImplTest {
         MatcherAssert.assertThat(listResult.size, Matchers.`is`(2))
         MatcherAssert.assertThat(listResult[0].characterId, Matchers.`is`(1011334L))
         MatcherAssert.assertThat(listResult[0].characterName, Matchers.`is`("3-D Man"))
-
     }
 }

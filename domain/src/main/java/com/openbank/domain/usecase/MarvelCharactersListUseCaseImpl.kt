@@ -9,9 +9,7 @@ import javax.inject.Inject
 class MarvelCharactersListUseCaseImpl @Inject constructor(
     val repository: GetCharactersRepository
 ) : MarvelCharactersListUseCase {
-
     override fun getCharactersList(offSet: Int): Observable<List<CharacterListModel>> {
         return repository.getCharacters(offSet)
     }
-
 }

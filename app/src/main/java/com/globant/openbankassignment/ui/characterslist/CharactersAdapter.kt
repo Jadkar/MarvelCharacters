@@ -21,7 +21,6 @@ class CharactersAdapter(
     private var characterList: List<CharacterListModel> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersListHolder {
-
         val binding = RowItemCharactersListBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
@@ -60,7 +59,6 @@ class CharactersAdapter(
         @BindingAdapter("profileImage")
         fun loadImage(view: ImageView, imageUrl: String?) {
             val options = RequestOptions()
-
                 .error(R.drawable.marvel)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .priority(Priority.HIGH)

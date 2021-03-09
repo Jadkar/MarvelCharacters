@@ -51,6 +51,4 @@ class DataModule {
     fun provideCharacterDetailsMapperImpl(): CharactersDetailsMapper {
         return CharactersDetailsMapperImpl()
     }
-
-
 }
